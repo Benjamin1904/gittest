@@ -1,0 +1,20 @@
+本地git和github之间的传输是通过SSH加密的，所以要先生成SSH Key并配置
+首先在git bash上面
+ssh-keygen -t rsa -C "youremail@example.com"
+按三下回车，直至生成SSH Key
+然后打开用户里面的.ssh文件夹下的id-rsa.pub,复制key，然后打开github->account->setting->SSH and GPG keys->New SSH key
+添加成功后进行验证
+ssh -T git@github.com
+Hi tianqixin! You've successfully authenticated, but GitHub does not provide shell access. # 成功信息
+出现以上信息说明连接上github
+
+然后在github创建一个新的仓库（Repositories）
+记录SSH链接
+
+在本地创建一个仓库（文件夹）
+git init  
+git add README.md                         # 添加文件
+git commit -m "添加 README.md 文件"        # 提交并备注信息
+git remote add origin git@github.com:tianqixin/runoob-git-test.git  #连接到Repositories
+最后推送到github
+git push -u origin master
