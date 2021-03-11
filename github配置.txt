@@ -19,4 +19,6 @@ git remote add origin git@github.com:tianqixin/runoob-git-test.git  #连接到Re
 最后推送到github
 git push -u origin master
 
-test push
+同步并下载
+git fetch origin
+git merge origin/master
